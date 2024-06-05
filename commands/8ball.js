@@ -8,15 +8,15 @@ const getRandomCompliment = (compliments) => {
   return compliments[randomIndex].text;
 };
 export default {
-  name: "8ball",
-  description: "Ask the magic 8ball a question",
+  name: "compliments",
+  description: "Твой комплимент",
   alias: ["eightball"],
-  usage: "/8ball <question>",
-  example: "/8ball Is this bot awesome?",
+  usage: "/compliments",
+  example: "compliments",
   category: "Fun",
   handler: async (ctx) => {
     try {
-      const response = await axios.get('https://backendbottg-production.up.railway.app/compliments/');
+      const response = await axios.get('https://backendbottg-production.up.railway.app/compliments');
       const compliments = response.data;
       const randomCompliment = getRandomCompliment(compliments);
       ctx.reply(` ${randomCompliment}`);
