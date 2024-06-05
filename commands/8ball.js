@@ -1,4 +1,6 @@
 
+import path from "path";
+import { fileURLToPath } from "url";
 import axios from 'axios';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const getRandomCompliment = (compliments) => {
